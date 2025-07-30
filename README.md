@@ -175,25 +175,6 @@ services:
 
 ## 🧪 Тестування
 
-### Запуск тестів
-```bash
-# Базові тести
-python test_city_detection.py
-
-# Розширені тести
-python test_advanced_features.py
-
-# Перевірка змінних середовища
-python check_env.py
-```
-
-### Тестування в Docker
-```bash
-# Запуск тестів в контейнері
-docker-compose exec ai-tour-guide python test_city_detection.py
-docker-compose exec ai-tour-guide python test_advanced_features.py
-```
-
 ### Тестові сценарії:
 - Визначення міста з тексту
 - Кешування даних
