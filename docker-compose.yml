@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  ai-tour-guide:
+    build: .
+    container_name: ai-tour-guide
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    restart: unless-stopped
+    volumes:
+      - ./app:/app/app  # Для розробки (hot reload)
+    environment:
+      - PYTHONUNBUFFERED=1  # Для кращого логування
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
